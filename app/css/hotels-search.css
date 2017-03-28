@@ -1,0 +1,37 @@
+.navbar {
+  background-color: rgba(0,44,119,0.7);
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.navbar .club-logo {
+  padding-bottom: 5px;
+}
+
+.navbar .nav-field, .navbar .left-nav-field {
+  color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+.navbar .nav-field {
+  border-left: 1px solid #fff;
+}
+
+.navbar .left-nav-field {
+  border-left: none;
+}
+
+.navbar .collapsed-icon {
+  color: white;
+}
+
+.navbar .navbar-toggler-right {
+  border: none;
+}
+
+.navbar .navbar-toggler-right i {
+  padding: 9px;
+}
