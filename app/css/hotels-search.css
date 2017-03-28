@@ -1,14 +1,14 @@
-.navbar {
+.primary-navbar {
   background-color: rgba(0,44,119,0.7);
   padding-left: 10%;
   padding-right: 10%;
 }
 
-.navbar .club-logo {
+.primary-navbar .club-logo {
   padding-bottom: 5px;
 }
 
-.navbar .nav-field, .navbar .left-nav-field {
+.primary-navbar .nav-field, .primary-navbar .left-nav-field, .secondary-navbar .nav-field {
   color: white;
   padding-top: 0;
   padding-bottom: 0;
@@ -16,22 +16,32 @@
   padding-left: .5rem;
 }
 
-.navbar .nav-field {
+.primary-navbar .nav-field {
   border-left: 1px solid #fff;
 }
 
-.navbar .left-nav-field {
+.primary-navbar .left-nav-field {
   border-left: none;
 }
 
-.navbar .collapsed-icon {
+.primary-navbar .collapsed-icon {
   color: white;
 }
 
-.navbar .navbar-toggler-right {
+.primary-navbar .navbar-toggler-right {
   border: none;
 }
 
-.navbar .navbar-toggler-right i {
+.primary-navbar .navbar-toggler-right i {
   padding: 9px;
+}
+
+.secondary-navbar {
+  background-color: rgba(0,44,119,0.4);
+  padding-left: 15%;
+  font-size: smaller;
+}
+
+.secondary-navbar .nav-field {
+  padding-left: 1.5em;
 }
