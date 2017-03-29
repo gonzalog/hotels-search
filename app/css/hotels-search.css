@@ -45,3 +45,15 @@
 .secondary-navbar .nav-field {
   padding-left: 1.5em;
 }
+
+.search-details {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #866ab3;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}

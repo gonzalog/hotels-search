@@ -1,9 +1,23 @@
-<div>
+<div ng-controller="hotelsSearchCtrl" ng-init="bootstrap()">
+  <div class="row">
+    <div class="search-details">
+      Hoteles disponibles para:
+      <div class="details">
+      {{currentSearch.city}}
+      {{currentSearch.from}}
+      {{currentSearch.upTo}}
+      {{currentSearch.guests}} huéspedes
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-4">
 
     </div>
     <div class="col-8">
+      <ul>
+        <li ng-repeat="hotel in hotels">{{hotel.name}}</li>
+      </ul>
 
     </div>
   </div>
