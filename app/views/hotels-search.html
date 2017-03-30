@@ -1,13 +1,13 @@
 <div ng-controller="hotelsSearchCtrl" ng-init="bootstrap()" class="hotels-search">
   <div class="row">
-    <div class="site-path">
+    <div class="site-path hidden-md-down">
       <span> <a href="#">Home</a></span>
       <span>/</span>
       <span> <a href="#">Hoteles</a></span>
       <span>/</span>
       <span>{{currentSearch.city}}</span>
     </div>
-    <div class="search-details">
+    <div class="search-details hidden-md-down">
       Hoteles disponibles para:
       <div class="details-line">
         <span class="field">
@@ -38,6 +38,36 @@
       <div ng-include="'app/views/name-filter.html'"></div>
       <div ng-include="'app/views/price-filter.html'"></div>
       <div ng-include="'app/views/stars-filter.html'"></div>
+    </div>
+    <div class="col-lg-9 filters-col hidden-lg-up mobile-menu">
+      <div class="row">
+        <div class="mobile-menu-line">
+          <span><a href="#">Modificar búsqueda</a></span>
+          <span><i class="fa fa-caret-down"></i></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mobile-menu-line">
+          <a href="#">Ver hoteles en el mapa</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mobile-menu-line" ng-init="showMobileFilters = false" ng-click="showMobileFilters = !showMobileFilters">
+          <span><a href="#">filtrar</a></span>
+          <span><i class="fa fa-caret-down"></i></span>
+        </div>
+      </div>
+      <div class="row mobile-filters" ng-show="showMobileFilters">
+        <div class="col-4">
+          <div ng-include="'app/views/stars-filter.html'"></div>
+        </div>
+        <div class="col-4">
+          <div ng-include="'app/views/price-filter.html'"></div>
+        </div>
+        <div class="col-4">
+          <div ng-include="'app/views/name-filter.html'"></div>
+        </div>
+      </div>
     </div>
     <div class="col-lg-9">
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
