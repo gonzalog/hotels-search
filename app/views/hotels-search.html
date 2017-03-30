@@ -42,10 +42,10 @@
             Nombre del hotel
           </p>
           <div class="row">
-            <div class="col-7 filter-col">
+            <div class="col-lg-7 filter-col">
               <input class="form-control" type="text" ng-model="name" placeholder="Ingrese el nombre del hotel">
             </div>
-            <div class="col-5 filter-col">
+            <div class="col-lg-5 filter-col">
               <button class="btn btn-primary" ng-click="searchFilter.name = name">Aceptar</button>
             </div>
           </div>
@@ -53,10 +53,23 @@
       </div>
     </div>
     <div class="col-9">
-      <ul>
-        <li ng-repeat="hotel in shownHotels()">{{hotel.name}}</li>
-      </ul>
-
+      <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
+        <div class="col-4">
+          <div class="recommended-alert" ng-show="hotel.recommended">
+            ¡Hotel recomendado!
+          </div>
+          <div class="dicount-alert" ng-show="hotel.discount > 0">
+            {{hotel.discount}}% OFF
+          </div>
+          <img class="hotel-image" src="{{hotel.imageUrl}}">
+        </div>
+        <div class="hotel-details col-5">
+          {{hotel.name}}
+        </div>
+        <div class="hotel-payment col-3">
+          {{hotel.price}}
+        </div>
+      </div>
     </div>
   </div>
 </div>
