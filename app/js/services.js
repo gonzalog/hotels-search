@@ -17,7 +17,7 @@ hotelsSearchServices.factory('Hotels', ['$http', 'HotelsApiURL',
 
         const variables = {
           city: city,
-          count: count,
+          count: count || 10,
           availability: { from, upTo, guests }
         }
 

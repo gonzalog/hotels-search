@@ -1,5 +1,12 @@
 <div ng-controller="hotelsSearchCtrl" ng-init="bootstrap()" class="hotels-search">
   <div class="row">
+    <div class="site-path">
+      <span> <a href="#">Home</a></span>
+      <span>/</span>
+      <span> <a href="#">Hoteles</a></span>
+      <span>/</span>
+      <span>{{currentSearch.city}}</span>
+    </div>
     <div class="search-details">
       Hoteles disponibles para:
       <div class="details-line">
@@ -26,12 +33,28 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-4">
-
+    <div class="col-3 filters-col">
+      <strong>Filtrar</strong>
+      <div class="card">
+        <div class="card-block">
+          <p class="filter-title">
+            <i class="fa fa-search"></i>
+            Nombre del hotel
+          </p>
+          <div class="row">
+            <div class="col-7 filter-col">
+              <input class="form-control" type="text" ng-model="name" placeholder="Ingrese el nombre del hotel">
+            </div>
+            <div class="col-5 filter-col">
+              <button class="btn btn-primary" ng-click="searchFilter.name = name">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-8">
+    <div class="col-9">
       <ul>
-        <li ng-repeat="hotel in hotels">{{hotel.name}}</li>
+        <li ng-repeat="hotel in shownHotels()">{{hotel.name}}</li>
       </ul>
 
     </div>

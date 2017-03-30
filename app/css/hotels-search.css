@@ -51,9 +51,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: #CCC;
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
@@ -72,4 +70,33 @@
 
 body {
   background-color: #F4F4F4;
+}
+
+.hotels-search {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.site-path {
+  margin-top: 10px;
+  font-size: 10;
+}
+
+.site-path span {
+  padding-right: 2px;
+}
+
+.filters-col {
+  padding-left: 0;
+  font-size: 15;
+  color: #157ab1;
+}
+
+.card {
+  border-radius: 0;
+}
+
+.filter-col {
+  padding-left: 2px;
+  padding-right: 2px;
 }
