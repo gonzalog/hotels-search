@@ -1,12 +1,27 @@
-<div ng-controller="hotelsSearchCtrl" ng-init="bootstrap()">
+<div ng-controller="hotelsSearchCtrl" ng-init="bootstrap()" class="hotels-search">
   <div class="row">
     <div class="search-details">
       Hoteles disponibles para:
-      <div class="details">
-      {{currentSearch.city}}
-      {{currentSearch.from}}
-      {{currentSearch.upTo}}
-      {{currentSearch.guests}} huéspedes
+      <div class="details-line">
+        <span class="field">
+          <i class="fa fa-map-marker"></i>
+          {{currentSearch.city}}
+        </span>
+        <span class="field">
+          <i class="fa fa-calendar"></i>
+          {{currentSearchToLocale('from')}}
+        </span>
+        <span class="field">
+          <i class="fa fa-calendar"></i>
+          {{currentSearchToLocale('upTo')}}
+        </span>
+        <span class="field">
+          <i class="fa fa-user"></i>
+          {{currentSearch.guests}} huéspedes
+        </span>
+        <span class="field">
+          <a href="#">Modificar búsqueda</a>
+        </span>
       </div>
     </div>
   </div>

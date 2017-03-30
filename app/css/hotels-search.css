@@ -50,10 +50,26 @@
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #866ab3;
+  border-color: #CCC;
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-details .details-line {
+  margin-top: 10px;
+}
+
+.search-details .field {
+  margin-right: 20px;
+  font-size: 15;
+}
+
+body {
+  background-color: #F4F4F4;
 }

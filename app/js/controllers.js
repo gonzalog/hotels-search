@@ -16,4 +16,6 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
   	$scope.search = () => {
       Hotels.load($scope.currentSearch, (hotels) => $scope.hotels = hotels)
   	}
+
+    $scope.currentSearchToLocale = (field) => $scope.currentSearch[field].toLocaleDateString()
   }]);
