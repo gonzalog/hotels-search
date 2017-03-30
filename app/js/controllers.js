@@ -29,4 +29,6 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
     }
 
     $scope.currentSearchToLocale = (field) => $scope.currentSearch[field].toLocaleDateString()
+
+    $scope.fullPrice = ({ price, discount }) => Math.trunc((price * 100) / (100 - discount ))
   }]);

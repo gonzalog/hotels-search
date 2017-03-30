@@ -90,7 +90,7 @@
             <span class="amount">{{hotel.price}}</span>
           </div>
           <div class="payment-description" ng-show="hotel.discount > 0">
-            Precio sin promo ARS {{ (hotel.price * 100) / (100 - hotel.discount ) }}
+            Precio sin promo ARS {{ fullPrice(hotel) }}
           </div>
           <div class="payment-description">
             Impuestos y tasas no incuídos
