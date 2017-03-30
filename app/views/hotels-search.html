@@ -35,50 +35,9 @@
   <div class="row">
     <div class="col-3 filters-col hidden-md-down">
       <strong>Filtrar</strong>
-      <div class="card">
-        <div class="card-block">
-          <p class="filter-title">
-            <i class="fa fa-search"></i>
-            Nombre del hotel
-          </p>
-          <div class="row">
-            <small class="col-lg-9 filter-col">
-              <input class="name-input" type="text" ng-model="name" placeholder="Ingrese el nombre del hotel">
-            </small>
-            <div class="col-lg-3 button-filter-col filter-col">
-              <a href="#" class="search-button" ng-click="searchFilter.name = name">Aceptar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card price-filter-card">
-        <div class="card-block">
-          <p class="filter-title">
-            <i class="fa fa-dollar"></i>
-            Precio por noche
-          </p>
-          <rzslider rz-slider-model="priceFilter.minValue" rz-slider-high="priceFilter.maxValue" rz-slider-options="priceFilter.options" class="price-filter"></rzslider>
-          <div class="filter-amounts">
-            <span class="min">${{priceFilter.minValue}}</span>
-            <span class="max">${{priceFilter.maxValue}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="card star-filter-card">
-        <div class="card-block">
-          <p class="filter-title">
-            <i class="fa fa-star"></i>
-            Estrellas
-          </p>
-          <input type="checkbox" ng-disabled="noStarsFilter()" ng-checked="noStarsFilter()" ng-click="unselectStarsFilters()"> Todas las estrellas
-          <span class="hotels-amountl">({{hotels.length}})</span>
-          <div ng-repeat="starsFilter in starsFilters" class="stars-options">
-            <span><input type="checkbox" ng-model="starsFilter.selected"></span>
-            <span repeat="starsFilter.value"><i class="fa fa-star"></i></span>
-            <span class="hotels-amount">({{starsFilter.applayingHotels()}})</span>
-          </div>
-        </div>
-      </div>
+      <div ng-include="'app/views/name-filter.html'"></div>
+      <div ng-include="'app/views/price-filter.html'"></div>
+      <div ng-include="'app/views/stars-filter.html'"></div>
     </div>
     <div class="col-lg-9">
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
