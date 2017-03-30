@@ -160,7 +160,7 @@ body {
   right: -8px;
 }
 
-.hotel-card .fa-star {
+.hotel-card .fa-star, .stars-options .fa-star {
   color: #FDBA12;
   margin-right: 3px;
 }
@@ -273,6 +273,12 @@ body {
   float: right;
 }
 
-.price-filter-card {
-  margin-top: 5px;
+.filters-col .card {
+  margin-bottom: 5px;
+}
+
+.hotels-amount {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #444;
 }

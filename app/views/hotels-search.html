@@ -64,6 +64,21 @@
           </div>
         </div>
       </div>
+      <div class="card star-filter-card">
+        <div class="card-block">
+          <p class="filter-title">
+            <i class="fa fa-star"></i>
+            Estrellas
+          </p>
+          <input type="checkbox" ng-disabled="noStarsFilter()" ng-checked="noStarsFilter()" ng-click="unselectStarsFilters()"> Todas las estrellas
+          <span class="hotels-amountl">({{hotels.length}})</span>
+          <div ng-repeat="starsFilter in starsFilters" class="stars-options">
+            <span><input type="checkbox" ng-model="starsFilter.selected"></span>
+            <span repeat="starsFilter.value"><i class="fa fa-star"></i></span>
+            <span class="hotels-amount">({{starsFilter.applayingHotels()}})</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-9">
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
