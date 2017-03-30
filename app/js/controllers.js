@@ -31,6 +31,40 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
         selected: false,
         applayingHotels: () => $scope.hotels.filter(({ stars }) => Number(stars) === starsOption).length
       }))
+
+      const fieldComparation = (field) => (aHotel, otherHotel) => aHotel[field] - otherHotel[field]
+      const priceComparation = fieldComparation('price')
+      const starsComparation = fieldComparation('stars')
+
+      $scope.sortingOptions = [
+        {
+          name: "Más relevante",
+          compare: (aHotel, otherHotel) => {
+            const relevance = ({ recommended, stars, discount }) =>
+              (recommended ? 100 : 0) + (Number(stars)*10) + discount
+
+            return relevance(otherHotel) - relevance(aHotel)
+          }
+        },
+        {
+          name: "Precio más bajo",
+          compare: priceComparation
+        },
+        {
+          name: "Precio más alto",
+          compare: (aHotel, otherHotel) => priceComparation(otherHotel, aHotel)
+        },
+        {
+          name: "Más estrellas",
+          compare: (aHotel, otherHotel) => starsComparation(otherHotel, aHotel)
+        },
+        {
+          name: "Menos estrellas",
+          compare: starsComparation
+        }
+      ]
+      
+      $scope.sortingSelection = $scope.sortingOptions[0]
     }
 
 
@@ -49,7 +83,7 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
         ({ selected }) => selected).some(({ value }) => Number(stars) === value)
       
       return [nameFilter, priceFilter, anyStarsFilter].reduce(
-        (hotels, filter) => hotels.filter(filter), $scope.hotels)
+        (hotels, filter) => hotels.filter(filter), $scope.hotels).sort($scope.sortingSelection.compare)
     }
 
     $scope.currentSearchToLocale = (field) => $scope.currentSearch[field].toLocaleDateString()

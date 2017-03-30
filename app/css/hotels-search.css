@@ -321,3 +321,19 @@ body {
 .mobile-filters {
   margin-top: 30px;
 }
+
+.sort-label {
+  margin-right: 5px;
+}
+
+.sort-selection {
+  background: white;
+}
+
+.sort-input {
+  float: right;
+}
+
+.sort-selection-row {
+  float: right;
+}

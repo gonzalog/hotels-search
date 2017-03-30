@@ -70,6 +70,14 @@
       </div>
     </div>
     <div class="col-lg-9">
+      <div class="row sort-selection-row">
+        <div class="sort-input">
+          <span><label class="sort-label">Ordenar</label></span>
+          <span>
+            <select class="sort-selection" ng-model="sortingSelection" ng-options="sortingOption.name for sortingOption in sortingOptions"></select>
+          </span>
+        </div>
+      </div>
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
         <div class="col-5">
           <div class="recommended-alert" ng-show="hotel.recommended">
