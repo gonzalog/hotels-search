@@ -51,6 +51,19 @@
           </div>
         </div>
       </div>
+      <div class="card price-filter-card">
+        <div class="card-block">
+          <p class="filter-title">
+            <i class="fa fa-dollar"></i>
+            Precio por noche
+          </p>
+          <rzslider rz-slider-model="priceFilter.minValue" rz-slider-high="priceFilter.maxValue" rz-slider-options="priceFilter.options" class="price-filter"></rzslider>
+          <div class="filter-amounts">
+            <span class="min">${{priceFilter.minValue}}</span>
+            <span class="max">${{priceFilter.maxValue}}</span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-9">
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">

@@ -15,6 +15,16 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
       $scope.searchFilter = {}
 
       $scope.search()
+
+      $scope.priceFilter = {
+        minValue: 0,
+        maxValue: 2000,
+        options: {
+          floor: 600,
+          ceil: 4000,
+          step: 1
+        }
+      }
     }
 
   	$scope.search = () => {
@@ -24,8 +34,11 @@ hotelsSearchControllers.controller('hotelsSearchCtrl', ['$scope', 'Hotels',
     $scope.shownHotels = () => {
       const nameFilter = ({ name }) => !$scope.searchFilter.name ||
         name.toLowerCase().match($scope.searchFilter.name.toLowerCase())
+
+      const priceFilter = ({ price }) => price >= $scope.priceFilter.minValue &&
+        price <= $scope.priceFilter.maxValue
       
-      return $scope.hotels.filter(nameFilter)
+      return $scope.hotels.filter(nameFilter).filter(priceFilter)
     }
 
     $scope.currentSearchToLocale = (field) => $scope.currentSearch[field].toLocaleDateString()
