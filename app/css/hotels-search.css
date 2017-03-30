@@ -164,3 +164,61 @@ body {
   color: #FDBA12;
   margin-right: 3px;
 }
+
+.hotel-card .bed-message {
+  margin-top: 10px;
+  color: #DF6800;
+  font-weight: bold;
+  font-size: 0.875rem;  
+}
+
+.hotel-card .services {
+  margin-top: 7px;
+}
+
+.hotel-card .services i {
+  margin-right: 3px;
+  color: #444;
+}
+
+.hotel-card .hotel-payment {
+  text-align: center;
+  border-left: 1px dashed #CCC;
+}
+
+.hotel-card .payment-description {
+  font-size: 0.6rem;
+}
+
+.hotel-card .currency {
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hotel-card .amount {
+  line-height: 2.5rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.hotel-card .final-price {
+  color: #DF6800
+}
+
+.hotel-card .show-hotel-button {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+  background-color: #002c77;
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 700;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+}

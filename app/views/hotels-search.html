@@ -54,7 +54,7 @@
     </div>
     <div class="col-9">
       <div class="row hotel-card" ng-repeat="hotel in shownHotels()">
-        <div class="col-4">
+        <div class="col-5">
           <div class="recommended-alert" ng-show="hotel.recommended">
             ¡Hotel recomendado!
           </div>
@@ -63,14 +63,45 @@
           </div>
           <img class="hotel-image" src="{{hotel.imageUrl}}">
         </div>
-        <div class="hotel-details col-5">
+        <div class="hotel-details col-4">
           <h6>
             {{hotel.name}}
           </h6>
           <div repeat="hotel.stars"><i class="fa fa-star"></i></div>
+          <div class="bed-message">
+            <span><i class="fa fa-bed"></i></span>
+            <span>Solo la habitación</span>
+          </div>
+          <div class="services">
+            <span> <i class="fa fa-glass"></i></span>
+            <span> <i class="fa fa-check-square-o"></i></span>
+            <span> <i class="fa fa-coffee"></i></span>
+            <span> <i class="fa fa-tv"></i></span>
+            <span> <i class="fa fa-wifi"></i></span>
+            <span> <i class="fa fa-users"></i></span>
+          </div>
         </div>
         <div class="hotel-payment col-3">
-          {{hotel.price}}
+          <div class="payment-description">
+            Precio por noche por habitación
+          </div>
+          <div class="final-price">
+            <span class="currency">ARS</span>
+            <span class="amount">{{hotel.price}}</span>
+          </div>
+          <div class="payment-description" ng-show="hotel.discount > 0">
+            Precio sin promo ARS {{ (hotel.price * 100) / (100 - hotel.discount ) }}
+          </div>
+          <div class="payment-description">
+            Impuestos y tasas no incuídos
+          </div>
+          <a href="#" class="show-hotel-button">Ver hotel</a>
+          <div class="payment-description">
+            <b>Paga en cuotas</b>
+          </div>
+          <div class="payment-description">
+            <b>Paga en destino</b>
+          </div>
         </div>
       </div>
     </div>
