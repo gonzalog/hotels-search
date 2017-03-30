@@ -64,7 +64,10 @@
           <img class="hotel-image" src="{{hotel.imageUrl}}">
         </div>
         <div class="hotel-details col-5">
-          {{hotel.name}}
+          <h6>
+            {{hotel.name}}
+          </h6>
+          <div repeat="hotel.stars"><i class="fa fa-star"></i></div>
         </div>
         <div class="hotel-payment col-3">
           {{hotel.price}}

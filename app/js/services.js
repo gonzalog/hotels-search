@@ -1,4 +1,4 @@
-var hotelsSearchServices = angular.module('hotelsSearchServices', []);
+const hotelsSearchServices = angular.module('hotelsSearchServices', []);
 
 hotelsSearchServices.factory('Hotels', ['$http', 'HotelsApiURL',
   function($http, HotelsApiURL){

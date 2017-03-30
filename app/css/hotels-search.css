@@ -149,6 +149,7 @@ body {
   font-weight: bold;
   margin-left: 15px;
 }
+
 .dicount-alert::after {
   content: "";
   position: absolute;
@@ -157,4 +158,9 @@ body {
   border-style: solid;
   top: 0;
   right: -8px;
+}
+
+.hotel-card .fa-star {
+  color: #FDBA12;
+  margin-right: 3px;
 }
